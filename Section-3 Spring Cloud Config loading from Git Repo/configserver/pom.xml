@@ -52,7 +52,7 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
 					<image>
-						<name>eazybytes/${project.artifactId}</name>
+						<name>amitlucky7/${project.artifactId}</name>
 					</image>
 				</configuration>
 			</plugin>
