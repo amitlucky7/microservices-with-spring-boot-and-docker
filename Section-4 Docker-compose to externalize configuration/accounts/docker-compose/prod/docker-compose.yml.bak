@@ -9,25 +9,6 @@ services:
       - "8071:8071"
     networks:
      - bank-network
-   
-  eurekaserver:
-    image: amitlucky7/eurekaserver:latest
-    mem_limit: 700m
-    ports:
-      - "8070:8070"
-    networks:
-     - bank-network
-    depends_on:
-      - configserver
-    deploy:
-      restart_policy:
-        condition: on-failure
-        delay: 15s
-        max_attempts: 3
-        window: 120s
-    environment:
-      SPRING_PROFILES_ACTIVE: prod
-      SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
       
   accounts:
     image: amitlucky7/accounts:latest
