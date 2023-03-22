@@ -1,0 +1,60 @@
+					---------------Docker Commands---------------------------
+	
+	docker build . -t amitlucky/accounts
+	
+	docker push docker.io/amitlucky7/accounts:latest
+	
+	
+	1. docker images: check the images that we have created
+	
+	2. docker run -p <port-for-service-for-outside-world>:<port-docker-internally-start-application> image name
+		
+		docker run is used to create the container by the image
+		
+			docker run -p 8080:8080 amit/accounts
+			docker run -p 8081:8080
+			
+	3. docker ps: to show all the running containers with details
+	
+	4. docker logs <container-id or prefix of container id> : to show the logs of the perticular container
+	
+	5. docker logs -f <container-id> : it stills looks for the logs
+	
+	6. docker stop <container-id> : to stop the container 
+	
+	7. docker ps -a : all the container present in the system 
+	
+	8. docker start <container-id1> <container-id2>: to start multiple containers
+	
+	9. docker container pause <container-id>: to pause the container to not take any request
+	
+			docker container pause 7a
+			
+	10. docker container unpause <container-id>
+	
+	11. docker container inspect <container-id>: all the details of the container
+	
+	12. docker kill <container-id> : it will not allow container to shut down gracefully 
+	
+	13. docker stats : to print the container related description
+	
+	14. docker rm <container-id> : used to remove the docker container
+	
+	15. docker run -d -p 8081:8080 amit/accounts : here -d is used to not print the logs instead it will start the container steady
+	
+	
+	
+	16. docker push docker.io/repository-name/image-name
+	
+	
+		docker push docker.io/amitlucky7/accounts
+		docker push docker.io/amitlucky7/cards
+		docker push docker.io/amitlucky7/loans
+		
+
+
+#to check the account microservices instance related information on eureka server use the below endpoint
+#http://localhost:8070/eureka/apps/accounts
+
+#to check the microservice related information(use actuator related endpoint)
+http://localhost:8080/actuator/info
