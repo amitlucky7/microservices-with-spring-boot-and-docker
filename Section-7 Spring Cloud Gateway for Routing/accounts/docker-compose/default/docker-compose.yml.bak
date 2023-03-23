@@ -91,14 +91,14 @@ services:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
       EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
-   
+      
   gatewayserver:
     image: amitlucky7/gatewayserver:latest
     mem_limit: 700m
     ports:
       - "8072:8072"
     networks:
-      - bank-network
+      - eazybank
     depends_on:
       - configserver
       - eurekaserver
@@ -114,7 +114,7 @@ services:
     environment:
       SPRING_PROFILES_ACTIVE: default
       SPRING_CONFIG_IMPORT: configserver:http://configserver:8071/
-      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/
+      EUREKA_CLIENT_SERVICEURL_DEFAULTZONE: http://eurekaserver:8070/eureka/     
       
 networks:
   bank-network:
